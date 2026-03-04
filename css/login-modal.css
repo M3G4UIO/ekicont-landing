@@ -299,7 +299,10 @@ body.light .login-role-card.user .role-db-badge {
     margin-top: 24px;
     padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 500;
@@ -308,6 +311,18 @@ body.light .login-role-card.user .role-db-badge {
 body.light .login-modal-footer {
     border-color: #f1f5f9;
     color: #94a3b8;
+}
+
+.admin-discreet-link {
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.3;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.admin-discreet-link:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 body.light .login-modal {

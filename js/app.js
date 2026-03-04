@@ -108,36 +108,23 @@ function injectLoginModal() {
 
             <div class="login-role-cards">
 
-                <!-- ADMIN CARD -->
-                <a href="${ODOO_URL}/web/login?db=${DB_ADMIN}"
-                   class="login-role-card admin"
-                   id="roleAdmin">
-                    <div class="role-icon">🛡️</div>
-                    <div class="role-info">
-                        <div class="role-name">Administrador</div>
-                        <div class="role-desc">Acceso al panel de control y configuración</div>
-                    </div>
-                    <span class="role-db-badge">${DB_ADMIN}</span>
-                    <span class="role-arrow">→</span>
-                </a>
-
                 <!-- USUARIO CARD -->
                 <a href="${ODOO_URL}/web/login?db=${DB_USUARIO}"
                    class="login-role-card user"
                    id="roleUser">
                     <div class="role-icon">👤</div>
                     <div class="role-info">
-                        <div class="role-name">Usuario / Cliente</div>
-                        <div class="role-desc">Accede a tu contabilidad y servicios</div>
+                        <div class="role-name">Ingresar al Sistema</div>
+                        <div class="role-desc">Acceda a su contabilidad, facturación y servicios</div>
                     </div>
-                    <span class="role-db-badge">${DB_USUARIO}</span>
                     <span class="role-arrow">→</span>
                 </a>
 
             </div>
 
             <div class="login-modal-footer">
-                Conexión segura · Powered by Ekicont
+                <div class="footer-text">Conexión segura · Powered by Ekicont</div>
+                <a href="${ODOO_URL}/web/login?db=${DB_ADMIN}" class="admin-discreet-link" title="Acceso Administrador">🔒</a>
             </div>
         </div>
     `;
