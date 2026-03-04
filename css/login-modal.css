@@ -120,15 +120,15 @@ body.light .login-modal-sub {
 .login-role-cards {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .login-role-card {
     display: flex;
     align-items: center;
     gap: 18px;
-    padding: 20px 22px;
-    border-radius: 18px;
+    padding: 24px 24px;
+    border-radius: 24px;
     border: 1.5px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.04);
     cursor: pointer;
@@ -140,8 +140,9 @@ body.light .login-modal-sub {
 }
 
 body.light .login-role-card {
-    border-color: rgba(2, 29, 73, 0.08);
-    background: rgba(2, 29, 73, 0.03);
+    border-color: rgba(2, 29, 73, 0.1);
+    background: #f8fafc;
+    /* very light grey matching figma */
 }
 
 .login-role-card::before {
@@ -195,14 +196,22 @@ body.light .login-role-card {
 
 /* Icon */
 .role-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     flex-shrink: 0;
+}
+
+body.light .login-role-card.admin .role-icon {
+    background: #e3effa;
+}
+
+body.light .login-role-card.user .role-icon {
+    background: #fae6ec;
 }
 
 .login-role-card.admin .role-icon {
@@ -219,26 +228,33 @@ body.light .login-role-card {
 }
 
 .role-name {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 800;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     letter-spacing: -0.01em;
 }
 
 .role-desc {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.45);
     font-weight: 500;
+    line-height: 1.35;
+    padding-right: 12px;
 }
 
 body.light .role-desc {
-    color: rgba(2, 29, 73, 0.45);
+    color: #6b7a99;
+}
+
+body.light .role-name {
+    color: #021D49;
 }
 
 /* Arrow */
 .role-arrow {
     font-size: 1.2rem;
     opacity: 0.4;
+    color: #6b7a99;
     transition: transform 0.2s, opacity 0.2s;
 }
 
@@ -249,12 +265,13 @@ body.light .role-desc {
 
 /* DB badge */
 .role-db-badge {
-    font-size: 0.6rem;
-    font-weight: 900;
+    font-size: 0.65rem;
+    font-weight: 800;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
 }
 
 .login-role-card.admin .role-db-badge {
@@ -262,25 +279,35 @@ body.light .role-desc {
     color: var(--blue);
 }
 
+body.light .login-role-card.admin .role-db-badge {
+    background: #dbeafe;
+    color: #318CDD;
+}
+
 .login-role-card.user .role-db-badge {
     background: rgba(243, 66, 109, 0.2);
     color: var(--pink);
 }
 
+body.light .login-role-card.user .role-db-badge {
+    background: #fce8ed;
+    color: #F3426D;
+}
+
 /* Footer note */
 .login-modal-footer {
-    margin-top: 20px;
-    padding-top: 16px;
+    margin-top: 24px;
+    padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.3);
     font-weight: 500;
 }
 
 body.light .login-modal-footer {
-    border-color: rgba(2, 29, 73, 0.08);
-    color: rgba(2, 29, 73, 0.3);
+    border-color: #f1f5f9;
+    color: #94a3b8;
 }
 
 body.light .login-modal {
