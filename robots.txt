@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/favicon.ico
+
+Sitemap: https://ekicont.com/sitemap.xml

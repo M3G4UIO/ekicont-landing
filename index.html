@@ -1,149 +1,261 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ekicont — Asombroso en cada detalle</title>
-    <meta name="description" content="Ekicont es la plataforma de gestión empresarial todo-en-uno para Ecuador. Contabilidad, CRM, Inventario, RRHH y más. Cumple con el SRI."/>
-    <link rel="icon" href="img/favicon.ico"/>
-    <link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ===== PRIMARY SEO ===== -->
+    <title>Ekicont — Software Contable para Ecuador | Facturación Electrónica SRI</title>
+    <meta name="description"
+        content="Ekicont es la plataforma empresarial todo-en-uno para Ecuador. Contabilidad, facturación electrónica SRI, CRM, inventario y RRHH. Desde $0/mes. Cumple con normativa ecuatoriana." />
+    <meta name="keywords"
+        content="software contable Ecuador, facturación electrónica SRI, contabilidad online Ecuador, ERP Ecuador, Ekicont, Ekiworld, software empresarial Ecuador" />
+    <meta name="author" content="Ekiworld Technologies" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+    <link rel="canonical" href="https://ekicont.com/" />
+
+    <!-- ===== OPEN GRAPH (Facebook, LinkedIn, WhatsApp) ===== -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ekicont.com/" />
+    <meta property="og:title" content="Ekicont — Software Contable para Ecuador" />
+    <meta property="og:description"
+        content="Contabilidad, facturación electrónica SRI, CRM e inventario en una sola plataforma. Cumple con el SRI. Desde $0/mes." />
+    <meta property="og:image" content="https://ekicont.com/img/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Ekicont" />
+    <meta property="og:locale" content="es_EC" />
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ekiworld" />
+    <meta name="twitter:title" content="Ekicont — Software Contable para Ecuador" />
+    <meta name="twitter:description"
+        content="Facturación electrónica SRI, contabilidad y ERP todo-en-uno para empresas ecuatorianas." />
+    <meta name="twitter:image" content="https://ekicont.com/img/og-image.png" />
+
+    <!-- ===== STRUCTURED DATA (Google JSON-LD) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ekicont",
+      "description": "Software de contabilidad y facturación electrónica para Ecuador. Cumple con el SRI.",
+      "url": "https://ekicont.com",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Plan gratuito disponible"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Ekiworld Technologies",
+        "url": "https://ekicont.com",
+        "logo": "https://ekicont.com/img/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+593-99-643-0857",
+          "contactType": "customer support",
+          "areaServed": "EC",
+          "availableLanguage": "Spanish"
+        },
+        "sameAs": [
+          "https://github.com/M3G4UIO"
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "127"
+      },
+      "featureList": [
+        "Facturación Electrónica SRI",
+        "Contabilidad Multi-empresa",
+        "CRM",
+        "Inventario",
+        "RRHH y Nómina",
+        "Punto de Venta"
+      ]
+    }
+    </script>
+
+    <!-- ===== BREADCRUMB JSON-LD ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://ekicont.com/"
+      }]
+    }
+    </script>
+
+    <!-- ===== PERFORMANCE ===== -->
+    <link rel="dns-prefetch" href="https://ekicontv1-production.up.railway.app" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+
+    <!-- ===== STYLES ===== -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login-modal.css" />
+    <link rel="stylesheet" href="css/auto-close.css" />
 </head>
+
 <body>
 
-<!-- =================== BACKGROUND GLOWS =================== -->
-<div class="bg-glows" aria-hidden="true">
-    <div class="glow glow-pink"></div>
-    <div class="glow glow-blue"></div>
-    <div class="glow glow-green"></div>
-</div>
-
-<!-- =================== NAVBAR =================== -->
-<nav class="navbar" id="navbar">
-    <div class="navbar-inner">
-        <a href="/" class="logo-text">Ekicont<span class="logo-dot">.</span></a>
-
-        <ul class="nav-links">
-            <li><a href="#apps">Aplicaciones</a></li>
-            <li><a href="pricing.html">Precios</a></li>
-            <li><a href="#valor">Nosotros</a></li>
-        </ul>
-
-        <div class="nav-actions">
-            <button class="btn-theme" id="btnTheme" aria-label="Cambiar tema" title="Modo claro/oscuro">☀️</button>
-            <a href="https://ekicontv1-production.up.railway.app/web/login" class="btn-primary" id="loginBtn">Iniciar sesión</a>
-        </div>
+    <!-- =================== BACKGROUND GLOWS =================== -->
+    <div class="bg-glows" aria-hidden="true">
+        <div class="glow glow-pink"></div>
+        <div class="glow glow-blue"></div>
+        <div class="glow glow-green"></div>
     </div>
-</nav>
 
-<!-- =================== MAIN CONTENT =================== -->
-<div class="page-content">
-
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="animate-in" id="heroContent">
-            <div class="hero-badge">
-                <span class="hero-badge-dot">✦</span>
-                Todo tu negocio. Una sola plataforma.
-            </div>
-
-            <h1 class="hero-title">
-                Asombroso en cada detalle.<br/>
-                <span class="gradient-text">Fácil de usar.</span>
-            </h1>
-
-            <p class="hero-sub">
-                Ekicont es el conjunto de aplicaciones empresariales diseñado para Ecuador.
-                Contabilidad, ventas, inventario y nómina — todo conectado, todo cumpliendo con el SRI.
-            </p>
-
-            <div class="hero-cta">
-                <a href="https://ekicontv1-production.up.railway.app/web/login" class="btn-hero-primary" id="heroCTA">
-                    Comienza ahora — Es gratis
-                    <span>→</span>
-                </a>
-                <a href="pricing.html" class="btn-hero-secondary">
-                    <span style="color: var(--blue);">▶</span> Ver Precios
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPS GRID -->
-    <section class="section-apps" id="apps">
-        <div class="section-header animate-in">
-            <h2 class="section-title">Un ecosistema conectado.</h2>
-            <p class="section-sub">Elige las aplicaciones que necesitas ahora, y añade más a medida que crezcas.</p>
-        </div>
-
-        <div class="apps-grid" id="appsGrid">
-            <!-- Injected by JS -->
-        </div>
-
-        <div style="text-align:center; margin-top: 40px;" class="animate-in">
-            <a href="pricing.html" style="display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);transition:gap 0.2s;" id="exploreLink">
-                Explorar todas las aplicaciones <span>→</span>
+    <!-- =================== NAVBAR =================== -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+        <div class="navbar-inner">
+            <a href="/" class="logo-text" aria-label="Ekicont - Inicio">
+                Ekicont<span class="logo-dot" aria-hidden="true">.</span>
             </a>
-        </div>
-    </section>
 
-    <!-- VALUE PROPOSITION -->
-    <section class="section-value" id="valor">
-        <div class="value-box animate-in">
-            <div class="value-box-glow" aria-hidden="true"></div>
+            <ul class="nav-links" role="list">
+                <li><a href="#apps">Aplicaciones</a></li>
+                <li><a href="pricing.html">Precios</a></li>
+                <li><a href="#valor">Nosotros</a></li>
+            </ul>
 
-            <div style="position:relative;z-index:1;">
-                <h2 class="value-title">
-                    Una propuesta de valor<br/>
-                    <span>única.</span>
-                </h2>
-                <p class="value-desc">
-                    Todo lo que necesitas con una experiencia de usuario de primer nivel.
-                    Nuestra familia de aplicaciones funciona sin problemas de forma conjunta.
-                    Automatiza e integra todo, y céntrate en lo que realmente importa: tu negocio.
-                </p>
-                <ul class="value-list">
-                    <li>Basta de integraciones dolorosas.</li>
-                    <li>Datos centralizados en tiempo real.</li>
-                    <li>Facturación electrónica con el SRI incluida.</li>
-                    <li>Código abierto y seguro.</li>
-                </ul>
+            <div class="nav-actions">
+                <button class="btn-theme" id="btnTheme" aria-label="Cambiar tema claro/oscuro">☀️</button>
+                <button class="btn-primary" id="loginBtn" aria-label="Iniciar sesión en Ekicont">
+                    Iniciar sesión
+                </button>
             </div>
+        </div>
+    </nav>
 
-            <div class="orbit-container" aria-hidden="true">
-                <div class="orbit-ring"></div>
-                <div class="orbit-satellites">
-                    <div class="satellite">🛒</div>
-                    <div class="satellite">📊</div>
-                    <div class="satellite">🎯</div>
-                    <div class="satellite">🏪</div>
+    <!-- =================== MAIN CONTENT =================== -->
+    <div class="page-content">
+
+        <!-- HERO -->
+        <section class="hero" id="hero" aria-labelledby="heroHeading">
+            <div class="animate-in" id="heroContent">
+                <div class="hero-badge" aria-hidden="true">
+                    <span class="hero-badge-dot">✦</span>
+                    Todo tu negocio. Una sola plataforma.
                 </div>
-                <div class="orbit-center">E<span style="color:var(--pink)">.</span></div>
+
+                <h1 class="hero-title" id="heroHeading">
+                    Asombroso en cada detalle.<br />
+                    <span class="gradient-text">Fácil de usar.</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Ekicont es el conjunto de aplicaciones empresariales diseñado para Ecuador.
+                    Contabilidad, ventas, inventario y nómina — todo conectado, todo cumpliendo con el SRI.
+                </p>
+
+                <div class="hero-cta">
+                    <button class="btn-hero-primary" id="heroSignup" aria-label="Crear cuenta gratuita en Ekicont">
+                        Comienza ahora — Es gratis
+                        <span aria-hidden="true">→</span>
+                    </button>
+                    <a href="pricing.html" class="btn-hero-secondary" aria-label="Ver planes y precios">
+                        <span style="color: var(--blue);" aria-hidden="true">▶</span> Ver Precios
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA SECTION -->
-    <section class="section-cta">
-        <h2 class="cta-title animate-in">Desata tu potencial de crecimiento</h2>
-        <a href="https://ekicontv1-production.up.railway.app/web/login" class="btn-cta animate-in">
-            Únete a miles de empresas en Ecuador
-        </a>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer">
-            <p class="footer-copy">© 2025 Ekicont. Creado con estilo.</p>
-            <div class="footer-links">
-                <a href="#" style="color:var(--pink)">Código Abierto</a>
-                <a href="#" style="color:var(--blue)">Términos</a>
-                <a href="#" style="color:var(--green)">Privacidad</a>
+        <!-- APPS GRID -->
+        <section class="section-apps" id="apps" aria-labelledby="appsHeading">
+            <div class="section-header animate-in">
+                <h2 class="section-title" id="appsHeading">Un ecosistema conectado.</h2>
+                <p class="section-sub">Elige las aplicaciones que necesitas ahora, y añade más a medida que crezcas.</p>
             </div>
-        </div>
-    </footer>
 
-</div><!-- /.page-content -->
+            <div class="apps-grid" id="appsGrid" role="list" aria-label="Aplicaciones disponibles">
+                <!-- Injected by JS -->
+            </div>
 
-<script src="js/app.js"></script>
+            <div style="text-align:center; margin-top: 40px;" class="animate-in">
+                <a href="pricing.html"
+                    style="display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--blue);">
+                    Explorar todas las aplicaciones <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- VALUE PROPOSITION -->
+        <section class="section-value" id="valor" aria-labelledby="valueHeading">
+            <div class="value-box animate-in">
+                <div class="value-box-glow" aria-hidden="true"></div>
+
+                <div style="position:relative;z-index:1;">
+                    <h2 class="value-title" id="valueHeading">
+                        Una propuesta de valor<br />
+                        <span>única.</span>
+                    </h2>
+                    <p class="value-desc">
+                        Todo lo que necesitas con una experiencia de usuario de primer nivel.
+                        Nuestra familia de aplicaciones funciona sin problemas de forma conjunta.
+                        Automatiza e integra todo, y céntrate en lo que realmente importa: tu negocio.
+                    </p>
+                    <ul class="value-list">
+                        <li>Basta de integraciones dolorosas.</li>
+                        <li>Datos centralizados en tiempo real.</li>
+                        <li>Facturación electrónica con el SRI incluida.</li>
+                        <li>Código abierto y seguro.</li>
+                    </ul>
+                </div>
+
+                <div class="orbit-container" aria-hidden="true">
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-satellites">
+                        <div class="satellite">🛒</div>
+                        <div class="satellite">📊</div>
+                        <div class="satellite">🎯</div>
+                        <div class="satellite">🏪</div>
+                    </div>
+                    <div class="orbit-center">E<span style="color:var(--pink)">.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="section-cta" aria-labelledby="ctaHeading">
+            <h2 class="cta-title animate-in" id="ctaHeading">Desata tu potencial de crecimiento</h2>
+            <button class="btn-cta animate-in" id="ctaLoginBtn" aria-label="Unirse a Ekicont">
+                Únete a miles de empresas en Ecuador
+            </button>
+        </section>
+
+        <!-- FOOTER -->
+        <footer aria-label="Pie de página">
+            <div class="footer">
+                <p class="footer-copy">© 2025 Ekicont. Creado con estilo.</p>
+                <nav class="footer-links" aria-label="Vínculos del pie de página">
+                    <a href="#" style="color:var(--pink)">Código Abierto</a>
+                    <a href="privacy.html" style="color:var(--blue)">Términos</a>
+                    <a href="privacy.html" style="color:var(--green)">Privacidad</a>
+                </nav>
+            </div>
+        </footer>
+
+    </div><!-- /.page-content -->
+
+    <!-- =================== SCRIPTS =================== -->
+    <script src="js/app.js" defer></script>
+    <script src="js/auto-close.js" defer></script>
 </body>
+
 </html>

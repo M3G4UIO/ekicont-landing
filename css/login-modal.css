@@ -1,0 +1,288 @@
+/* =========================================================
+   Login Role Modal — login-modal.css
+   "¿Quién eres?" → Admin (EKICONT) / Usuario (GALAPAGOS)
+   ========================================================= */
+
+/* ---- Backdrop ---- */
+.login-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(1, 10, 25, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.login-modal-backdrop.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ---- Modal Box ---- */
+.login-modal {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 28px;
+    background: #021D49;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    padding: 40px 32px 32px;
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+}
+
+body.light .login-modal {
+    background: #ffffff;
+    border-color: rgba(2, 29, 73, 0.1);
+}
+
+.login-modal-backdrop.open .login-modal {
+    transform: translateY(0) scale(1);
+}
+
+/* Close button */
+.login-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+body.light .login-modal-close {
+    background: rgba(2, 29, 73, 0.06);
+    color: rgba(2, 29, 73, 0.5);
+}
+
+.login-modal-close:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+/* Header */
+.login-modal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 16px;
+}
+
+body.light .login-modal-badge {
+    color: rgba(2, 29, 73, 0.4);
+}
+
+.login-modal-badge-dot {
+    color: var(--pink);
+}
+
+.login-modal-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+}
+
+.login-modal-sub {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+body.light .login-modal-sub {
+    color: rgba(2, 29, 73, 0.45);
+}
+
+/* ---- Role Cards ---- */
+.login-role-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-role-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 22px;
+    border-radius: 18px;
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+body.light .login-role-card {
+    border-color: rgba(2, 29, 73, 0.08);
+    background: rgba(2, 29, 73, 0.03);
+}
+
+.login-role-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+}
+
+.login-role-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Admin card accent */
+.login-role-card.admin {
+    border-color: rgba(49, 140, 221, 0.3);
+}
+
+.login-role-card.admin::before {
+    background: radial-gradient(circle at left, rgba(49, 140, 221, 0.1), transparent 70%);
+}
+
+.login-role-card.admin:hover {
+    border-color: var(--blue);
+    border-color: rgba(49, 140, 221, 0.6);
+}
+
+.login-role-card.admin:hover::before {
+    opacity: 1;
+}
+
+/* User card accent */
+.login-role-card.user {
+    border-color: rgba(243, 66, 109, 0.3);
+}
+
+.login-role-card.user::before {
+    background: radial-gradient(circle at left, rgba(243, 66, 109, 0.1), transparent 70%);
+}
+
+.login-role-card.user:hover {
+    border-color: rgba(243, 66, 109, 0.6);
+}
+
+.login-role-card.user:hover::before {
+    opacity: 1;
+}
+
+/* Icon */
+.role-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.login-role-card.admin .role-icon {
+    background: rgba(49, 140, 221, 0.15);
+}
+
+.login-role-card.user .role-icon {
+    background: rgba(243, 66, 109, 0.15);
+}
+
+/* Text */
+.role-info {
+    flex-grow: 1;
+}
+
+.role-name {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 3px;
+    letter-spacing: -0.01em;
+}
+
+.role-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 500;
+}
+
+body.light .role-desc {
+    color: rgba(2, 29, 73, 0.45);
+}
+
+/* Arrow */
+.role-arrow {
+    font-size: 1.2rem;
+    opacity: 0.4;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.login-role-card:hover .role-arrow {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+/* DB badge */
+.role-db-badge {
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.login-role-card.admin .role-db-badge {
+    background: rgba(49, 140, 221, 0.2);
+    color: var(--blue);
+}
+
+.login-role-card.user .role-db-badge {
+    background: rgba(243, 66, 109, 0.2);
+    color: var(--pink);
+}
+
+/* Footer note */
+.login-modal-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+}
+
+body.light .login-modal-footer {
+    border-color: rgba(2, 29, 73, 0.08);
+    color: rgba(2, 29, 73, 0.3);
+}
+
+body.light .login-modal {
+    color: var(--navy);
+}
