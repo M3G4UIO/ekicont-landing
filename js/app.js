@@ -62,8 +62,23 @@ function applyTheme(isDark) {
     localStorage.setItem('eki-theme', isDark ? 'dark' : 'light');
 }
 
+// Default to light (diurno). 
+// Automatic switch to light between 6 AM and 7 PM.
+const hour = new Date().getHours();
+const isDaytime = hour >= 6 && hour < 19;
 const savedTheme = localStorage.getItem('eki-theme');
-applyTheme(savedTheme !== 'light');
+
+// If it's daytime, force light mode. Otherwise, check saved preference.
+// Default to light if no preference exists.
+let shouldBeDark = false;
+if (isDaytime) {
+    shouldBeDark = false;
+    localStorage.removeItem('eki-theme'); // Reset on day
+} else {
+    shouldBeDark = savedTheme === 'dark';
+}
+
+applyTheme(shouldBeDark);
 if (btnTheme) btnTheme.addEventListener('click', () => applyTheme(body.classList.contains('light')));
 
 // =================== LOGIN ROLE MODAL ===================
