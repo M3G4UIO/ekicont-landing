@@ -47,7 +47,7 @@ const PRICING_CONFIG = {
         ]
     },
     empresa: {
-        label: 'Equipos Remotos',
+        label: 'Compañias',
         plans: [
             {
                 id: 'pyme',
