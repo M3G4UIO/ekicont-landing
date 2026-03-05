@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 3000;
 // Serve everything in the project root
 const serve = serveStatic(path.join(__dirname), {
     index: ['index.html'],
-    dotfiles: 'ignore'
+    dotfiles: 'ignore',
+    extensions: ['html']
 });
 
 const server = http.createServer((req, res) => {
