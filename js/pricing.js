@@ -122,7 +122,7 @@ function buildCard(plan, cycle) {
             `).join('')}
         </ul>
 
-        <a href="https://ekicontv1-production.up.railway.app/web/login" 
+        <a href="${ODOO_URL}/api/v1/checkout?plan=${plan.id}&cycle=${cycle}" 
            class="card-btn ${plan.highlight ? 'card-btn-highlight' : 'card-btn-default'}">
             <span>${plan.buttonText}</span>
             <span class="card-btn-arrow">→</span>
@@ -165,21 +165,29 @@ function initControls() {
 // =================== ODOO API ===================
 async function fetchPricingData() {
     try {
-        const res = await fetch(`${ODOO_URL}/ekiworld/api/pricing`, {
+        // Load live transparent logo from Odoo branding API
+        document.querySelectorAll('.site-logo').forEach(img => {
+            img.src = `${ODOO_URL}/api/v1/branding/logo`;
+        });
+
+        const res = await fetch(`${ODOO_URL}/api/v1/pricing`, {
             method: 'GET',
             headers: { 'Accept': 'application/json' },
             signal: AbortSignal.timeout(5000)
         });
         if (!res.ok) return;
+
         const json = await res.json();
-        const data = json.result;
+        const data = json.data;
         if (data && data.pricing) {
             // Merge API data: override prices if available
             Object.keys(data.pricing).forEach(profileKey => {
                 if (configData[profileKey]) {
-                    data.pricing[profileKey].forEach(apiPlan => {
-                        const local = configData[profileKey].plans.find(p => p.id === apiPlan.id);
-                        if (local) local.prices = apiPlan.prices;
+                    Object.keys(data.pricing[profileKey]).forEach(planKey => {
+                        const local = configData[profileKey].plans.find(p => p.id === planKey);
+                        if (local) {
+                            local.prices = data.pricing[profileKey][planKey];
+                        }
                     });
                 }
             });
