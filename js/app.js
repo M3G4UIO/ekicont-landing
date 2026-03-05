@@ -9,7 +9,7 @@
 const ODOO_URL = 'https://ekicontv1-production.up.railway.app';
 
 // DB routing for login modal
-const DB_ADMIN = 'ekicont';      // Administrador → master DB
+const DB_ADMIN = 'EKICONT';      // Administrador → master DB
 const DB_USUARIO = 'GALAPAGOS';    // Usuario/Cliente → client DB
 
 // =================== APP DATA ===================
